@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import "./globals.css";
 import UserHeader from "@/components/UserHeader";
+import Providers from "@/components/Providers";
 
 export default function RootLayout({
   children,
@@ -12,10 +13,13 @@ export default function RootLayout({
       <body
         className="bg-zinc-800"
       >
-        <UserHeader/>
-        <Header/>
-        {children}
+        <Providers>
+          <UserHeader/>
+          <Header/>
+          {children}
+        </Providers>
       </body>
     </html>
   );
 }
+
