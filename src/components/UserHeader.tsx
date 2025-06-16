@@ -25,7 +25,7 @@ export default function UserHeader(){
             {
                 session.status === "unauthenticated" ? (
                     <>
-                        <div className='font-bold hover:text-amber-600 transition whitespace-nowrap'>
+                        <div className={`font-bold transition whitespace-nowrap ${!isModalOpen ? 'hover:text-amber-600' : ''}`}>
                             <button onClick={() => setIsModalOpen(true)} className='cursor-pointer hover:underline'>Entre ou cadastre-se</button>
                             <LoginModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
                         </div>
@@ -44,7 +44,7 @@ export default function UserHeader(){
             </div>
             {
                 session.status === "unauthenticated" ? 
-                <FaRegUserCircle className="md:hidden text-xl lg:text-3xl hover:cursor-pointer hover:text-amber-600 transition my-2 ml-4 md:ml-12"/> :
+                <button onClick={() => setIsModalOpen(true)}><FaRegUserCircle className="md:hidden text-xl lg:text-3xl hover:cursor-pointer hover:text-amber-600 transition my-2 ml-4 md:ml-12"/></button> :
                 <div className='md:hidden ml-4 my-2'><UserImage /></div>
             }
         </div>
