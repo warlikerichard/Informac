@@ -38,7 +38,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 cursor-pointer"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -46,7 +46,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
         </button>
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
+            Entre na sua conta
           </h2>
         </div>
         <div className="mt-8 space-y-6">
@@ -72,7 +72,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
               />
             </svg>
-            Sign in with Google
+            Entrar com Google
           </button>
         </div>
       </div>

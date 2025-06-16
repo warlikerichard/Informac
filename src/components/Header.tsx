@@ -34,8 +34,10 @@ export default function Header(){
                     <FaRegUserCircle className="hidden md:block text-2xl lg:text-3xl hover:cursor-pointer hover:text-amber-600 transition mt-4 lg:mt-0 "/>
                 </button> :
                 <div className="flex flex-col items-center space-x-2 hover:cursor-pointer hover:text-amber-600 transition">
-                    <UserImage/>
-                    <p className="text-sm font-bold mt-2">{session.data?.user?.name}</p>
+                    <div className="hidden md:block">
+                        <UserImage/>
+                    </div>
+                    <p className="hidden md:block text-sm font-bold mt-2">{session.data?.user?.name}</p>
                 </div>
                 }
                 <LoginModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

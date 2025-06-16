@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
 import { useState } from 'react';
 import LoginModal from './LoginModal';
+import UserImage from './UserImage';
 
 // When the project is more polished, we will verify wether the user is logged in or not.
 // If yes, we will shouw the options to log out, see the cart or see the account.
@@ -41,7 +42,11 @@ export default function UserHeader(){
                 <FaShoppingCart className='mr-2'/> Ver carrinho de compras
             </div>
             </div>
-            <FaRegUserCircle className="md:hidden text-xl lg:text-3xl hover:cursor-pointer hover:text-amber-600 transition my-2 ml-4 md:ml-12"/>
+            {
+                session.status === "unauthenticated" ? 
+                <FaRegUserCircle className="md:hidden text-xl lg:text-3xl hover:cursor-pointer hover:text-amber-600 transition my-2 ml-4 md:ml-12"/> :
+                <div className='md:hidden ml-4 my-2'><UserImage /></div>
+            }
         </div>
     )
 }
